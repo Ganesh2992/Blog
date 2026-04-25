@@ -23,8 +23,6 @@ function Select({
                     {option}
                 </option>
             ))}
-
-
           </select>
 
       </div>
