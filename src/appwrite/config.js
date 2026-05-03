@@ -1,5 +1,6 @@
 import conf from '../conf/conf.js';
 import { Client, Databases, Storage,Query } from 'appwrite';
+import {ID} from "appwrite";
 
 export class Service{
     client = new Client();
@@ -97,8 +98,8 @@ export class Service{
 
     async uploadFile(file){
       try{
-          return await this.bucket,createFile(
-              conf.appWriteBucketId,
+          return await this.bucket.createFile(
+              conf.appWriteDatabaseId,
               ID.unique(),
               file,
           )
@@ -114,7 +115,7 @@ export class Service{
             conf.appWriteBucketId,
             fileId
           )
-          return true;
+          
 
       }catch(error){
         console.log("Appwrite service :: DeleteFile :: error",error);
